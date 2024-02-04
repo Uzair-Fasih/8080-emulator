@@ -1,4 +1,4 @@
 disassemble:
-	@g++ ./disassembler.cpp
+	@g++ ./src/disassembler.cpp
 	@./a.out
 	@rm ./a.out
