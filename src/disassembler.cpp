@@ -306,4 +306,7 @@ int main() {
 
   if (!infile.is_open()) std::cerr << "Unable to open input file" << std::endl;
   Disassemler disassembler(infile, outfile);
+  
+  infile.close();
+  outfile.close();
 }
