@@ -390,12 +390,10 @@ class Emulator {
 
       switch(*instruction) {
         case 0x00: break;        
-        
         case 0x01:
           state.c = instruction[1];
           state.b = instruction[2];
           opbytes = 3;
-        
         case 0x05:
           {
             uint8_t res = state.b - 1;
@@ -403,14 +401,12 @@ class Emulator {
             state.b = res;
           }
           break;
-
         case 0x06:
           {
             state.b = instruction[1];
             opbytes = 2;
           }
           break;
-        
         case 0x09:
           {
             uint32_t hl = (state.h << 8) | state.l;
@@ -422,7 +418,6 @@ class Emulator {
             state->cc.cy = ((res & 0xffff0000) > 0);
           }
           break;
-        
         case 0x0d:
           {
             uint8_t res = state.c - 1;
@@ -430,12 +425,10 @@ class Emulator {
             state.c = res;
           }
           break;
-
         case 0x0e:
           state.c = instruction[1];
           opbytes = 2;
           break;
-        
         case 0x0f:
           {
             uint8_t x = state.a;
